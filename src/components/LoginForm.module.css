@@ -1,0 +1,29 @@
+.loginForm {
+  background-color: antiquewhite;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  width: 15rem;
+  display: block;
+  height: 2rem;
+  margin: 10px 0;
+}
+
+.select {
+  width: 20rem;
+  height: 2.5rem;
+  margin: 10px 0;
+  /* display: block; */
+}
+
+.avatar > img {
+  border-radius: 50%;
+  width: 250px;
+}

@@ -1,10 +1,12 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import handleReceiveDataAction from "./redux/actions/handleReceiveData";
 import LoadingBar from "react-redux-loading";
+import LoginForm from "./components/LoginForm";
 
 function App() {
   const dispatch = useDispatch();
+  const ready = useSelector((state) => state.ready);
   useEffect(() => {
     dispatch(handleReceiveDataAction());
   }, [dispatch]);
@@ -12,7 +14,7 @@ function App() {
   return (
     <div className="App">
       <LoadingBar />
-      Hello world !
+      {ready && <LoginForm />}
     </div>
   );
 }
