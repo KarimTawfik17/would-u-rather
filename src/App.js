@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import handleReceiveDataAction from "./redux/actions/handleReceiveData";
 import LoadingBar from "react-redux-loading";
 import LoginForm from "./components/LoginForm";
+import LeaderBoard from "./components/LeaderBoard";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,6 +16,7 @@ function App() {
     <div className="App">
       <LoadingBar />
       {ready && <LoginForm />}
+      {ready && <LeaderBoard />}
     </div>
   );
 }
