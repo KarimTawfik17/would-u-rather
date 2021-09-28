@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import handleSaveQuestionAction from "../redux/actions/handleSaveQuestion";
 
 import styles from "./NewQuestion.module.css";
+import Button from "./UI/Button";
 
 function NewQuestion() {
   const dispatch = useDispatch();
@@ -16,29 +17,32 @@ function NewQuestion() {
     setOptionTwoText("");
   }
   return (
-    <div>
+    <div className="container">
       <h1>Create new question</h1>
       <form onSubmit={submitHandler}>
-        <label>
-          Would you rather...
+        <label className={styles.label}>
+          <div>Would you rather...</div>
           <input
+            className={styles.input}
             value={optionOneText}
             onChange={(e) => setOptionOneText(e.target.value)}
           />
         </label>
-        <label>
-          Or
+        <label className={styles.label}>
+          <div className={styles.or}>Or</div>
           <input
+            className={styles.input}
             value={optionTwoText}
             onChange={(e) => setOptionTwoText(e.target.value)}
           />
         </label>
-        <button
+        <Button
           type="submit"
+          className={styles.btn}
           disabled={optionOneText.trim() === "" || optionTwoText.trim() === ""}
         >
           Submit
-        </button>
+        </Button>
       </form>
     </div>
   );

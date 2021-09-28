@@ -27,8 +27,8 @@ function LoginForm(props) {
   }
 
   return (
-    <form className={styles.loginForm + " container"} onSubmit={submitHandler}>
-      <h1 className={styles.header}> Login </h1>
+    <form className=" container" onSubmit={submitHandler}>
+      <h1> Login </h1>
       <div className={styles.avatar}>
         <img src={avatarURL} alt="selected user avatar" />
       </div>

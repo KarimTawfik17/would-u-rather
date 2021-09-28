@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <LoadingBar style={{ backgroundColor: "#f85c3c" }} />
       {ready && <LoginForm />}
-      {ready && <AllQuestions />}
+      {ready && <NewQuestion />}
     </div>
   );
 }

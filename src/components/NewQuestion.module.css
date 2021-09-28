@@ -1,0 +1,30 @@
+.input {
+  padding-left: 1rem;
+  width: 40rem;
+  height: 5rem;
+  margin: 2rem auto;
+  border: 1px solid #dcdfe1;
+  border-radius: 8px;
+  /* cursor: pointer; */
+  font-size: 2rem;
+  display: block;
+}
+
+.btn {
+  width: 25rem;
+  display: block;
+  height: 3rem;
+  margin: 1rem auto;
+}
+
+.label {
+  margin: 2rem;
+  text-align: left;
+  font-size: 2rem;
+  color: #e85032;
+}
+
+.or {
+  text-align: center;
+  margin-bottom: 3rem;
+}
