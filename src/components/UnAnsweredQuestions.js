@@ -1,4 +1,4 @@
-import QuestionPage from "./QuestionPage";
+import Question from "./Question";
 
 function UnAnsweredQuestions({ questions }) {
   return (
@@ -7,8 +7,7 @@ function UnAnsweredQuestions({ questions }) {
       <ul>
         {questions.map((question) => (
           <li key={question.id}>
-            {/* {JSON.stringify(question)} */}
-            <QuestionPage id={question.id} />
+            <Question question={question} />
           </li>
         ))}
       </ul>

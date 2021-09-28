@@ -1,5 +1,4 @@
-import QuestionPage from "./QuestionPage";
-
+import Question from "./Question";
 function AnsweredQuestions({ questions }) {
   return (
     <div className="container">
@@ -7,8 +6,7 @@ function AnsweredQuestions({ questions }) {
       <ul>
         {questions.map((question) => (
           <li key={question.id}>
-            {JSON.stringify(question)}
-            <QuestionPage id={question.id} />
+            <Question question={question} />
           </li>
         ))}
       </ul>

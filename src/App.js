@@ -22,7 +22,7 @@ function App() {
       {ready && <LoginForm />}
       {ready && <LeaderBoard />}
       {ready && <QuestionPage id="8xf0y6ziyjabvozdd253nd" />}
-      {/* <AllQuestions /> */}
+      <AllQuestions />
     </div>
   );
 }

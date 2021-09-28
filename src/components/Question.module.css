@@ -1,0 +1,54 @@
+.avatar > img {
+  border-radius: 50%;
+  width: 10rem;
+  margin: 1rem auto;
+}
+
+.avatar {
+  display: flex;
+  align-content: center;
+}
+
+.author {
+  text-align: left;
+  font-size: 1.2rem;
+  background-color: #ebedee;
+  margin: 0;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.author span {
+  margin-left: 1rem;
+  color: #f85c3c;
+  font-weight: bold;
+}
+.author {
+  text-align: left;
+  font-size: 1.2rem;
+  background-color: #ebedee;
+  margin: 0;
+  height: 2rem;
+  line-height: 2rem;
+  align-self: stretch;
+}
+.question {
+  color: #42484d;
+  font-family: "sans-serif";
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+.questionInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  width: 50%;
+  text-align: center;
+  margin: 1.5rem auto;
+  height: 2rem;
+  line-height: 2rem;
+}

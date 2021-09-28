@@ -4,7 +4,11 @@ function Button(props) {
   const classes =
     props.className +
     " " +
-    (props.secondary ? styles["secondary-btn"] : styles["primary-btn"]);
+    styles.btn +
+    " " +
+    (props.secondary === true
+      ? styles["secondary-btn"]
+      : styles["primary-btn"]);
 
   return (
     <button disabled={props.disabled} className={classes} type={props.type}>

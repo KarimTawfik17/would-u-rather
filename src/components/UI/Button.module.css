@@ -1,6 +1,14 @@
 .primary-btn {
   background-color: #f85c3c;
   color: white;
+}
+
+.secondary-btn {
+  color: #f85c3c;
+  background-color: white;
+}
+
+.btn {
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -8,11 +16,12 @@
   font-weight: bold;
 }
 
-.primary-btn:hover {
+.btn:hover {
   background-color: #e85032;
+  color: white;
 }
 
-.primary-btn:disabled {
+.btn:disabled {
   background-color: #979ea7;
   cursor: not-allowed;
 }
