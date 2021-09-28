@@ -5,6 +5,7 @@ import LoadingBar from "react-redux-loading";
 import LoginForm from "./components/LoginForm";
 import LeaderBoard from "./components/LeaderBoard";
 import NewQuestion from "./components/NewQuestion";
+import AllQuestions from "./components/AllQuestions";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ function App() {
     <div className="App">
       <LoadingBar />
       {ready && <LoginForm />}
-      {ready && <NewQuestion />}
+      {ready && <AllQuestions />}
     </div>
   );
 }
