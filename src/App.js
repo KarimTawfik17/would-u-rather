@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import handleReceiveDataAction from "./redux/actions/handleReceiveData";
-import LoadingBar from "react-redux-loading";
+
 import LoginForm from "./components/LoginForm";
 import LeaderBoard from "./components/LeaderBoard";
 import NewQuestion from "./components/NewQuestion";
 import AllQuestions from "./components/AllQuestions";
 import QuestionPage from "./components/QuestionPage";
+import Header from "./components/Header";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,8 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <LoadingBar style={{ backgroundColor: "#f85c3c" }} />
-
+      <Header />
       {ready && <LoginForm />}
       {ready && <LeaderBoard />}
       {ready && <QuestionPage id="8xf0y6ziyjabvozdd253nd" />}
