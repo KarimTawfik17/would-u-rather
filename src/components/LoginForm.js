@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import loginAction from "../redux/actions/login";
 import styles from "./LoginForm.module.css";
+import Button from "./UI/Button";
 
 function LoginForm(props) {
   const [ids, users] = useSelector((state) => [
@@ -46,13 +47,13 @@ function LoginForm(props) {
           </option>
         ))}
       </select>
-      <button
-        disabled={selectedUser === ""}
-        className={styles.btn + " primary-btn"}
+      <Button
         type="submit"
+        className={styles.btn}
+        disabled={selectedUser === ""}
       >
         Login
-      </button>
+      </Button>
     </form>
   );
 }

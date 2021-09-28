@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import handleSaveQuestionAction from "../redux/actions/handleSaveQuestion";
 
+import styles from "./NewQuestion.module.css";
+
 function NewQuestion() {
   const dispatch = useDispatch();
   const [optionOneText, setOptionOneText] = useState("");
