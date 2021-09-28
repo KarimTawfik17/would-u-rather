@@ -3,7 +3,7 @@
   /* justify-content: space-around; */
   width: 80%;
   border: 2px solid #dcdfe1;
-  margin: 0.5rem auto;
+  margin: 1rem auto;
   align-content: center;
   /* height: 17rem; */
 }
@@ -16,12 +16,12 @@
 
 .card > div:nth-child(2) {
   /* background-color: blue; */
-  border-right: 2px dashed #dcdfe1;
 
   flex: 2 0 0;
 }
 
 .card > div:nth-child(3) {
   /* background-color: black; */
+  border-left: 2px dashed #dcdfe1;
   flex: 1 0 0;
 }

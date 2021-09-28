@@ -6,6 +6,7 @@ import LoginForm from "./components/LoginForm";
 import LeaderBoard from "./components/LeaderBoard";
 import NewQuestion from "./components/NewQuestion";
 import AllQuestions from "./components/AllQuestions";
+import QuestionPage from "./components/QuestionPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -17,8 +18,11 @@ function App() {
   return (
     <div className="App">
       <LoadingBar style={{ backgroundColor: "#f85c3c" }} />
+
       {ready && <LoginForm />}
       {ready && <LeaderBoard />}
+      {ready && <QuestionPage id="8xf0y6ziyjabvozdd253nd" />}
+      {/* <AllQuestions /> */}
     </div>
   );
 }

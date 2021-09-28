@@ -2,12 +2,12 @@ import QuestionPage from "./QuestionPage";
 
 function UnAnsweredQuestions({ questions }) {
   return (
-    <div>
-      <h2>Un answered questions</h2>
+    <div className="container">
+      <h1>Un-Answered Questions</h1>
       <ul>
         {questions.map((question) => (
           <li key={question.id}>
-            {JSON.stringify(question)}
+            {/* {JSON.stringify(question)} */}
             <QuestionPage id={question.id} />
           </li>
         ))}

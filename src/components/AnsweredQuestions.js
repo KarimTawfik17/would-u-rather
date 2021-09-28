@@ -2,8 +2,8 @@ import QuestionPage from "./QuestionPage";
 
 function AnsweredQuestions({ questions }) {
   return (
-    <div>
-      <h2>answered questions</h2>
+    <div className="container">
+      <h1>Answered Questions</h1>
       <ul>
         {questions.map((question) => (
           <li key={question.id}>

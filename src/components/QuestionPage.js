@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { fromatQuestion } from "../utils/helpers";
-
-// import formatQ
+import Card from "./UI/Card";
+import styles from "./QuestionPage.module.css";
 
 function QuestionPage({ id }) {
   const question = useSelector((state) => {
@@ -16,15 +16,23 @@ function QuestionPage({ id }) {
   });
 
   return (
-    <div>
-      <div>{question.authorName}</div>
-      <div>
-        {question.optionOne.text} {question.optionOne.votes.length}{" "}
-      </div>
-      <div>
-        {question.optionTwo.text} {question.optionTwo.votes.length}{" "}
-      </div>
-      <div>u answerd :{question.answer}</div>
+    <div className="container">
+      <Card>
+        <div className={styles.avatar}>
+          <img src={question.avatar} alt={`avatar of ${question.name}`} />
+        </div>
+        <div className={styles.questionInfo}>
+          <p className={styles.author}>
+            <span>{question.authorName}</span> created this question.
+          </p>
+
+          <p className={styles.question}>Would you rather ... ?</p>
+          <div className={styles.answers}>
+            <button>{question.optionOne.text}</button>
+            <button>{question.optionTwo.text}</button>
+          </div>
+        </div>
+      </Card>
     </div>
   );
 }
