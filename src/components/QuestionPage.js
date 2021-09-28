@@ -1,10 +1,14 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fromatQuestion } from "../utils/helpers";
 import Card from "./UI/Card";
 import styles from "./QuestionPage.module.css";
 import Button from "./UI/Button";
+import { useParams } from "react-router";
+import handleSaveAnswerAction from "../redux/actions/handleSaveAnswer";
 
-function QuestionPage({ id }) {
+function QuestionPage() {
+  const { qid: id } = useParams();
+
   const question = useSelector((state) => {
     const formattedQuestion = fromatQuestion(
       id,
@@ -14,6 +18,7 @@ function QuestionPage({ id }) {
     );
     return formattedQuestion;
   });
+  const dispatch = useDispatch();
 
   return (
     <div className="container">
@@ -29,8 +34,22 @@ function QuestionPage({ id }) {
           <p className={styles.question}>Would you rather ... ?</p>
           {!question.answer && (
             <div className={styles.answers}>
-              <Button secondary={true}>{question.optionOne.text}</Button>
-              <Button secondary={true}>{question.optionTwo.text}</Button>
+              <Button
+                onClick={() =>
+                  dispatch(handleSaveAnswerAction(question.id, "optionOne"))
+                }
+                secondary={true}
+              >
+                {question.optionOne.text}
+              </Button>
+              <Button
+                onClick={() =>
+                  dispatch(handleSaveAnswerAction(question.id, "optionTwo"))
+                }
+                secondary={true}
+              >
+                {question.optionTwo.text}
+              </Button>
             </div>
           )}
           {question.answer && (

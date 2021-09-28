@@ -22,13 +22,6 @@ export function fromatQuestions(questionsObj, usersObj, currentUser) {
 }
 
 export function fromatQuestion(id, questionsObj, usersObj, currentUser) {
-  // console.log(
-  //   "format questions args are, ",
-  //   id,
-  //   questionsObj,
-  //   usersObj,
-  //   currentUser
-  // );
   const formattedQuestion = {};
   formattedQuestion.id = id;
   formattedQuestion.authorName = usersObj[questionsObj[id].author].name;

@@ -11,7 +11,12 @@ function Button(props) {
       : styles["primary-btn"]);
 
   return (
-    <button disabled={props.disabled} className={classes} type={props.type}>
+    <button
+      disabled={props.disabled}
+      className={classes}
+      type={props.type}
+      onClick={props.onClick}
+    >
       {props.children}
     </button>
   );

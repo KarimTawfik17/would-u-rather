@@ -18,7 +18,7 @@ function LoginForm(props) {
 
   function submitHandler(e) {
     e.preventDefault();
-    // console.log(selectedUser);
+
     dispatch(loginAction(selectedUser));
   }
 

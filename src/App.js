@@ -8,22 +8,47 @@ import NewQuestion from "./components/NewQuestion";
 import AllQuestions from "./components/AllQuestions";
 import QuestionPage from "./components/QuestionPage";
 import Header from "./components/Header";
+import { Route, Switch } from "react-router";
 
 function App() {
   const dispatch = useDispatch();
   const ready = useSelector((state) => state.ready);
+  const currentUser = useSelector((state) => state.currentUser);
+
   useEffect(() => {
     dispatch(handleReceiveDataAction());
   }, [dispatch]);
 
+  if (!ready) {
+    return <Header />;
+  }
+
+  if (!currentUser) {
+    return (
+      <>
+        <Header /> <LoginForm />
+      </>
+    );
+  }
   return (
-    <div className="App">
+    <>
       <Header />
-      {ready && <LoginForm />}
-      {ready && <LeaderBoard />}
-      {ready && <QuestionPage id="8xf0y6ziyjabvozdd253nd" />}
-      <AllQuestions />
-    </div>
+      <Switch>
+        <Route path="/questions/:qid">
+          <QuestionPage />
+        </Route>
+        <Route path="/home">
+          <AllQuestions />
+        </Route>
+
+        <Route path="/add">
+          <NewQuestion />
+        </Route>
+        <Route path="/leaderboard">
+          <LeaderBoard />
+        </Route>
+      </Switch>
+    </>
   );
 }
 
