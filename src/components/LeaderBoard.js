@@ -1,23 +1,6 @@
 import { useSelector } from "react-redux";
 import User from "./User";
-
-function formatUsers(usersObj) {
-  const usersArr = [];
-
-  for (let key in usersObj) {
-    const answers = Object.keys(usersObj[key].answers).length;
-    const questions = usersObj[key].questions.length;
-    usersArr.push({
-      id: usersObj[key].id,
-      name: usersObj[key].name,
-      avatar: usersObj[key].avatarURL,
-      answers,
-      questions,
-      score: answers + questions,
-    });
-  }
-  return usersArr.sort((a, b) => b.score - a.score);
-}
+import { formatUsers } from "../utils/helpers";
 
 function LeaderBoard(props) {
   const users = useSelector((state) => formatUsers(state.users));

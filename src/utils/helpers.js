@@ -16,19 +16,26 @@ export function fromatQuestions(questionsObj, usersObj, currentUser) {
     }
   }
   return [
-    answered.sort((a, b) => b.timeStamp - a.timeStamp),
-    unAnswered.sort((a, b) => b.timeStamp - a.timeStamp),
+    answered.sort((a, b) => b.timestamp - a.timestamp),
+    unAnswered.sort((a, b) => b.timestamp - a.timestamp),
   ];
 }
 
 export function fromatQuestion(id, questionsObj, usersObj, currentUser) {
+  // console.log(
+  //   "format questions args are, ",
+  //   id,
+  //   questionsObj,
+  //   usersObj,
+  //   currentUser
+  // );
   const formattedQuestion = {};
   formattedQuestion.id = id;
   formattedQuestion.authorName = usersObj[questionsObj[id].author].name;
   formattedQuestion.avatar = usersObj[questionsObj[id].author].avatarURL;
   formattedQuestion.optionOne = questionsObj[id].optionOne;
   formattedQuestion.optionTwo = questionsObj[id].optionTwo;
-  formattedQuestion.timeStamp = questionsObj[id].timeStamp;
+  formattedQuestion.timestamp = questionsObj[id].timestamp;
   if (questionsObj[id].optionOne.votes.includes(currentUser)) {
     formattedQuestion.answer = "optionOne";
   } else if (questionsObj[id].optionTwo.votes.includes(currentUser)) {
