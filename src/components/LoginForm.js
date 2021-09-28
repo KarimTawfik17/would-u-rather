@@ -26,7 +26,8 @@ function LoginForm(props) {
   }
 
   return (
-    <form className={styles.loginForm} onSubmit={submitHandler}>
+    <form className={styles.loginForm + " container"} onSubmit={submitHandler}>
+      <h1 className={styles.header}> Login </h1>
       <div className={styles.avatar}>
         <img src={avatarURL} alt="selected user avatar" />
       </div>
@@ -47,7 +48,7 @@ function LoginForm(props) {
       </select>
       <button
         disabled={selectedUser === ""}
-        className={styles.btn}
+        className={styles.btn + " primary-btn"}
         type="submit"
       >
         Login

@@ -1,7 +1,4 @@
 .loginForm {
-  background-color: antiquewhite;
-  width: 80%;
-  margin: auto;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -10,20 +7,31 @@
 }
 
 .btn {
-  width: 15rem;
+  width: 25rem;
   display: block;
-  height: 2rem;
-  margin: 10px 0;
+  height: 2.5rem;
+  margin: 1rem auto;
 }
 
 .select {
-  width: 20rem;
+  width: 25rem;
   height: 2.5rem;
-  margin: 10px 0;
-  /* display: block; */
+  margin: 1rem auto;
+  border: 1px solid #dcdfe1;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 .avatar > img {
   border-radius: 50%;
-  width: 250px;
+  width: 20rem;
+  margin: 2rem auto;
+}
+
+.header {
+  color: #42484d;
+  font-family: "sans-serif";
+  font-weight: bold;
+  font-size: 3rem;
 }
