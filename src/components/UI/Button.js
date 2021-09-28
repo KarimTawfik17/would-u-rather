@@ -5,7 +5,7 @@ function Button(props) {
     props.className +
     " " +
     (props.secondary ? styles["secondary-btn"] : styles["primary-btn"]);
-  console.log(props, classes);
+
   return (
     <button disabled={props.disabled} className={classes} type={props.type}>
       {props.children}

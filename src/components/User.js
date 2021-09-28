@@ -1,28 +1,31 @@
+import Card from "./UI/Card";
 import styles from "./User.module.css";
 
 function User({ name, avatar, answers, questions, score }) {
   return (
-    <div className={styles.user}>
+    <Card className={styles.user}>
       <div className={styles.avatar}>
-        <img src={avatar} alt={`avatar of ${name}`} style={{ width: "75px" }} />
+        <img src={avatar} alt={`avatar of ${name}`} />
       </div>
       <div className={styles.info}>
-        <h2>name</h2>
+        <h2>{name}</h2>
         <div>
-          <p>Answered questions </p>
-          <p>{answers}</p>
+          <p>
+            Answered questions : <span> {answers} </span>{" "}
+          </p>
         </div>
         <div>
-          <p>Created questions </p>
-          <p>{questions}</p>
+          <p>
+            Created questions : <span> {questions} </span>{" "}
+          </p>
         </div>
       </div>
 
       <div className={styles.score}>
         <h3>Score</h3>
-        <p> {score} </p>
+        <span> {score} </span>
       </div>
-    </div>
+    </Card>
   );
 }
 

@@ -6,8 +6,8 @@ function LeaderBoard(props) {
   const users = useSelector((state) => formatUsers(state.users));
 
   return (
-    <div>
-      LeaderBoard
+    <div className="container">
+      <h1>LeaderBoard</h1>
       {users.map((user) => (
         <User key={user.id} {...user} />
       ))}
