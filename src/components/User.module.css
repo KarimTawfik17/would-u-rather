@@ -26,10 +26,13 @@
   border-radius: 20px;
 }
 
+.info div {
+  box-shadow: -5px 6px 15px 2px #f85c3c27;
+  padding: 0 5px;
+}
+
 .info p {
   font-size: 1.2rem;
-  box-shadow: 5px 6px 15px 2px rgba(158, 157, 157, 0.75);
-  border-radius: 5px;
   height: 1.5rem;
   line-height: 1.5rem;
 }
