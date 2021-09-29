@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router";
 import handleSaveQuestionAction from "../redux/actions/handleSaveQuestion";
 
 import styles from "./NewQuestion.module.css";
@@ -7,14 +8,20 @@ import Button from "./UI/Button";
 
 function NewQuestion() {
   const dispatch = useDispatch();
+
+  const history = useHistory();
   const [optionOneText, setOptionOneText] = useState("");
   const [optionTwoText, setOptionTwoText] = useState("");
 
   function submitHandler(e) {
     e.preventDefault();
-    dispatch(handleSaveQuestionAction(optionOneText, optionTwoText));
-    setOptionOneText("");
-    setOptionTwoText("");
+    dispatch(
+      handleSaveQuestionAction(optionOneText, optionTwoText, () => {
+        setOptionOneText("");
+        setOptionTwoText("");
+        history.push("/");
+      })
+    );
   }
   return (
     <div className="container">
