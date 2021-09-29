@@ -63,6 +63,11 @@
   color: #f85c3c;
 }
 
+.vote span {
+  display: inline-block;
+  width: 50%;
+}
+
 .text {
   font-size: 1.2rem;
 }
@@ -74,7 +79,7 @@
 .myAnswer::after {
   position: absolute;
   bottom: 0px;
-  right: 0px;
+  left: 30%;
   content: "";
   background: url("../check-solid.svg");
   background-position: center;
@@ -83,5 +88,5 @@
   z-index: 10;
   width: 40%;
 
-  height: 40%;
+  height: 30%;
 }

@@ -1,14 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { fromatQuestion } from "../utils/helpers";
+import { calcPercentage, fromatQuestion } from "../utils/helpers";
 import Card from "./UI/Card";
 import styles from "./QuestionPage.module.css";
 import Button from "./UI/Button";
 import { useParams } from "react-router";
 import handleSaveAnswerAction from "../redux/actions/handleSaveAnswer";
+import Unfound from "./Unfound";
 
 function QuestionPage() {
   const { qid: id } = useParams();
-
+  const dispatch = useDispatch();
   const question = useSelector((state) => {
     const formattedQuestion = fromatQuestion(
       id,
@@ -18,7 +19,9 @@ function QuestionPage() {
     );
     return formattedQuestion;
   });
-  const dispatch = useDispatch();
+  if (!question) {
+    return <Unfound />;
+  }
 
   return (
     <div className="container">
@@ -60,7 +63,12 @@ function QuestionPage() {
                 }
               >
                 <p className={styles.text}>{question.optionOne.text}</p>
-                <p className={styles.vote}>{question.optionOne.votes.length}</p>
+                <p className={styles.vote}>
+                  <span>{question.optionOne.votes.length}votes</span>
+                  <span>
+                    {calcPercentage(question.optionOne, question.optionTwo)[0]}%
+                  </span>
+                </p>
               </div>
               <div
                 className={
@@ -68,7 +76,12 @@ function QuestionPage() {
                 }
               >
                 <p className={styles.text}>{question.optionTwo.text}</p>
-                <p className={styles.vote}>{question.optionTwo.votes.length}</p>
+                <p className={styles.vote}>
+                  <span>{question.optionTwo.votes.length}votes</span>
+                  <span>
+                    {calcPercentage(question.optionOne, question.optionTwo)[1]}%
+                  </span>
+                </p>
               </div>
             </div>
           )}

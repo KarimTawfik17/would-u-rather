@@ -8,7 +8,7 @@ import NewQuestion from "./components/NewQuestion";
 import AllQuestions from "./components/AllQuestions";
 import QuestionPage from "./components/QuestionPage";
 import Header from "./components/Header";
-import { Route, Switch } from "react-router";
+import { Redirect, Route, Switch } from "react-router";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,7 +26,8 @@ function App() {
   if (!currentUser) {
     return (
       <>
-        <Header /> <LoginForm />
+        <Header />
+        <LoginForm />
       </>
     );
   }
@@ -46,6 +47,9 @@ function App() {
         </Route>
         <Route path="/leaderboard">
           <LeaderBoard />
+        </Route>
+        <Route path="/">
+          <Redirect to="/home" />
         </Route>
       </Switch>
     </>

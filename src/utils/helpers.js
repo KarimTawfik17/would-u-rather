@@ -22,16 +22,22 @@ export function fromatQuestions(questionsObj, usersObj, currentUser) {
 }
 
 export function fromatQuestion(id, questionsObj, usersObj, currentUser) {
+  var unformattedQuesrtion = questionsObj[id];
+  if (!unformattedQuesrtion) {
+    //wrong Id
+    return null;
+  }
+
   const formattedQuestion = {};
   formattedQuestion.id = id;
-  formattedQuestion.authorName = usersObj[questionsObj[id].author].name;
-  formattedQuestion.avatar = usersObj[questionsObj[id].author].avatarURL;
-  formattedQuestion.optionOne = questionsObj[id].optionOne;
-  formattedQuestion.optionTwo = questionsObj[id].optionTwo;
-  formattedQuestion.timestamp = questionsObj[id].timestamp;
-  if (questionsObj[id].optionOne.votes.includes(currentUser)) {
+  formattedQuestion.authorName = usersObj[unformattedQuesrtion.author].name;
+  formattedQuestion.avatar = usersObj[unformattedQuesrtion.author].avatarURL;
+  formattedQuestion.optionOne = unformattedQuesrtion.optionOne;
+  formattedQuestion.optionTwo = unformattedQuesrtion.optionTwo;
+  formattedQuestion.timestamp = unformattedQuesrtion.timestamp;
+  if (unformattedQuesrtion.optionOne.votes.includes(currentUser)) {
     formattedQuestion.answer = "optionOne";
-  } else if (questionsObj[id].optionTwo.votes.includes(currentUser)) {
+  } else if (unformattedQuesrtion.optionTwo.votes.includes(currentUser)) {
     formattedQuestion.answer = "optionTwo";
   }
 
@@ -54,4 +60,19 @@ export function formatUsers(usersObj) {
     });
   }
   return usersArr.sort((a, b) => b.score - a.score);
+}
+
+export function calcPercentage(optionOne, optionTwo) {
+  return [
+    (
+      (optionOne.votes.length /
+        (optionOne.votes.length + optionTwo.votes.length)) *
+      100
+    ).toFixed(0),
+    (
+      (optionTwo.votes.length /
+        (optionOne.votes.length + optionTwo.votes.length)) *
+      100
+    ).toFixed(0),
+  ];
 }

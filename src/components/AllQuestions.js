@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Route } from "react-router";
+import { Redirect, Route } from "react-router";
 import { NavLink } from "react-router-dom";
 import { fromatQuestions } from "../utils/helpers";
 import AnsweredQuestions from "./AnsweredQuestions";
@@ -26,11 +26,14 @@ function AllQuestions() {
         </h1>
       </div>
       <div>
-        <Route path="/home/answered">
-          <AnsweredQuestions questions={answered} />
+        <Route path="/home" exact>
+          <Redirect to="/home/unanswered" />
         </Route>
         <Route path="/home/unanswered">
           <UnAnsweredQuestions questions={unAnswered} />
+        </Route>
+        <Route path="/home/answered">
+          <AnsweredQuestions questions={answered} />
         </Route>
       </div>
     </>
