@@ -4,7 +4,7 @@ focused specially on Redux library.
 
 ## Installation
 1- install all dependencies - `npm install` or `yarn install`.\
-2- launch the project - `npm start` or `yarn start`.\
+2- launch the project - `npm start` or `yarn start`.
 
 ## Getting Started with Create React App
 
