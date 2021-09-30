@@ -4,7 +4,10 @@ focused specially on Redux library.
 
 ## Installation
 1- install all dependencies - `npm install` or `yarn install`.\
-2- launch the project - `npm start` or `yarn start`.
+2- launch the project - `npm start` or `yarn start`.\
+3- Open [http://localhost:3000](http://localhost:3000) to view it in the browser.\
+4- Login using one of the current users.\
+5. Enjoy playing.
 
 ## Getting Started with Create React App
 
