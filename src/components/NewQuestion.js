@@ -17,8 +17,6 @@ function NewQuestion() {
     e.preventDefault();
     dispatch(
       handleSaveQuestionAction(optionOneText, optionTwoText, () => {
-        setOptionOneText("");
-        setOptionTwoText("");
         history.push("/");
       })
     );

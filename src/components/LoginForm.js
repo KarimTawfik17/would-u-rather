@@ -1,12 +1,10 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router";
 import loginAction from "../redux/actions/login";
 import styles from "./LoginForm.module.css";
 import Button from "./UI/Button";
 
 function LoginForm() {
-  const history = useHistory();
   const [ids, users] = useSelector((state) => [
     Object.keys(state.users),
     state.users,
@@ -22,7 +20,6 @@ function LoginForm() {
     e.preventDefault();
 
     dispatch(loginAction(selectedUser));
-    history.push("/");
   }
 
   function changeHandler(e) {

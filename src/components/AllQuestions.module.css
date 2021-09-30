@@ -6,17 +6,12 @@
   display: inline-block;
 }
 
-.navHeader a {
+.navHeader button {
   text-decoration: none;
-  color: #9a9fa5;
+
   font-size: 2rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 
   border: 1px solid;
   padding: 2rem;
-}
-
-.navHeader a.active {
-  text-decoration: underline;
-  color: #f85c3c;
 }

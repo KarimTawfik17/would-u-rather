@@ -8,7 +8,8 @@ import NewQuestion from "./components/NewQuestion";
 import AllQuestions from "./components/AllQuestions";
 import QuestionPage from "./components/QuestionPage";
 import Header from "./components/Header";
-import { Redirect, Route, Switch } from "react-router";
+import { Route, Switch } from "react-router";
+import Unfound from "./components/Unfound";
 
 function App() {
   const dispatch = useDispatch();
@@ -35,21 +36,21 @@ function App() {
     <>
       <Header />
       <Switch>
-        <Route path="/questions/:qid">
+        <Route path="/questions/:qid" exact>
           <QuestionPage />
         </Route>
-        <Route path="/home">
-          <AllQuestions />
-        </Route>
 
-        <Route path="/add">
+        <Route path="/add" exact>
           <NewQuestion />
         </Route>
-        <Route path="/leaderboard">
+        <Route path="/leaderboard" exact>
           <LeaderBoard />
         </Route>
+        <Route path="/" exact>
+          <AllQuestions />
+        </Route>
         <Route path="/">
-          <Redirect to="/home" />
+          <Unfound />
         </Route>
       </Switch>
     </>

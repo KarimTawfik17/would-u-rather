@@ -21,18 +21,19 @@ function Header() {
               <NavLink
                 disabled={currentUser === undefined}
                 activeClassName={styles.active}
-                to="/home"
+                to="/"
+                exact
               >
                 Home
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName={styles.active} to="/add">
+              <NavLink activeClassName={styles.active} to="/add" exact>
                 New Question
               </NavLink>
             </li>
             <li>
-              <NavLink activeClassName={styles.active} to="/leaderboard">
+              <NavLink activeClassName={styles.active} to="/leaderboard" exact>
                 Leader Board
               </NavLink>
             </li>
