@@ -1,10 +1,10 @@
 # Would You Rather game app 
 This is the one of the project featured in Udacity's React Developer Nano-degree program
-focused specially on Redux library
+focused specially on Redux library.
 
 ## Installation
-1- install all dependencies - `npm install` or `yarn install`.
-2- launch the project - `npm start` or `yarn start`.
+1- install all dependencies - `npm install` or `yarn install`.\
+2- launch the project - `npm start` or `yarn start`.\
 
 ## Getting Started with Create React App
 
